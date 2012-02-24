@@ -1,0 +1,50 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>User name</th>
+    <th>Nickname</th>
+    <th>Gender</th>
+    <th>Birthday</th>
+    <th>Age</th>
+    <th>Occupation</th>
+    <th>Line phone</th>
+    <th>Mobile phone</th>
+    <th>Email</th>
+    <th>User address</th>
+    <th>Lock</th>
+    <th>password</th>
+    <th>Id number</th>
+    <th>Main account</th>
+    <th>Imei</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.user_id %></td>
+    <td><%=h user.user_name %></td>
+    <td><%=h user.nickname %></td>
+    <td><%=h user.gender %></td>
+    <td><%=h user.birthday %></td>
+    <td><%=h user.age %></td>
+    <td><%=h user.occupation %></td>
+    <td><%=h user.line_phone %></td>
+    <td><%=h user.mobile_phone %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.user_address %></td>
+    <td><%=h user.lock %></td>
+    <td><%=h user.password %></td>
+    <td><%=h user.id_number %></td>
+    <td><%=h user.main_account %></td>
+    <td><%=h user.imei %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

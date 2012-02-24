@@ -1,0 +1,47 @@
+<h1>New adv</h1>
+
+<% form_for(@adv) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :adv_id %><br />
+    <%= f.text_field :adv_id %>
+  </p>
+  <p>
+    <%= f.label :store_id %><br />
+    <%= f.text_field :store_id %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.label :pic %><br />
+    <%= f.text_field :pic %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.text_field :start_time %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.text_field :end_time %>
+  </p>
+  <p>
+    <%= f.label :push %><br />
+    <%= f.text_field :push %>
+  </p>
+  <p>
+    <%= f.label :remain %><br />
+    <%= f.text_field :remain %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', advs_path %>

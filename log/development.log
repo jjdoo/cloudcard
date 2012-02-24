@@ -1,0 +1,1912 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (160.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `adv`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `adv`[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mSHOW FIELDS FROM `card`[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mdescribe `card`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mSHOW KEYS FROM `card`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `card_class`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `card_class`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `card_class`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW FIELDS FROM `ele_coupons`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mdescribe `ele_coupons`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSHOW FIELDS FROM `store`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `store`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `store`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `user`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mdescribe `user`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (227.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111217021330)
+  [4;36;1mSQL (54.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `user_name` varchar(255), `name` varchar(255), `gender` varchar(255), `birthday` date, `age` varchar(255), `occupation` varchar(255), `line_phone` varchar(255), `mobile_phone` varchar(255), `email` varchar(255), `user_address` varchar(255), `lock` varchar(255), `user_password` varchar(255), `id_number` varchar(255), `main_account` varchar(255), `imei` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (57.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021330')[0m
+Migrating to CreateStores (20111217021447)
+  [4;36;1mSQL (95.0ms)[0m   [0;1mCREATE TABLE `stores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `store_id` varchar(255), `store_name` varchar(255), `store_address` varchar(255), `contact` varchar(255), `license_id` varchar(255), `logo` varchar(255), `store_password` varchar(255), `parent_store_id` varchar(255), `hot` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021447')[0m
+Migrating to CreateCardClasses (20111217021557)
+  [4;36;1mSQL (75.0ms)[0m   [0;1mCREATE TABLE `card_classes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `store_id` varchar(255), `class` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021557')[0m
+Migrating to CreateCards (20111217021654)
+  [4;36;1mSQL (104.0ms)[0m   [0;1mCREATE TABLE `cards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `store_id` varchar(255), `class` varchar(255), `card_number` varchar(255), `card_password` varchar(255), `authorized` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021654')[0m
+Migrating to CreateAdvs (20111217021740)
+  [4;36;1mSQL (73.0ms)[0m   [0;1mCREATE TABLE `advs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `adv_id` varchar(255), `store_id` varchar(255), `title` varchar(255), `text` varchar(255), `pic` varchar(255), `start_time` varchar(255), `end_time` varchar(255), `push` varchar(255), `remain` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021740')[0m
+Migrating to CreateEleCoupons (20111217022010)
+  [4;36;1mSQL (42.0ms)[0m   [0;1mCREATE TABLE `ele_coupons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `adv_id` varchar(255), `barcode` varchar(255), `paid` varchar(255), `eff_start_time` date, `eff_end_time` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217022010')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (43.0ms)[0m   [0mSHOW FIELDS FROM `advs`[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mdescribe `advs`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `advs`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW FIELDS FROM `card_classes`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `card_classes`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `card_classes`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `cards`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `cards`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `cards`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW FIELDS FROM `ele_coupons`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `ele_coupons`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW KEYS FROM `ele_coupons`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mdescribe `stores`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `stores`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:44) [GET]
+
+ActionController::RoutingError (No route matches "/uiser" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:44) [GET]
+
+ActionController::RoutingError (No route matches "/uisers" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:45) [GET]
+
+ActionController::RoutingError (No route matches "/uis" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:45) [GET]
+
+ActionController::RoutingError (No route matches "/us" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:46) [GET]
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 10:21:46) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 6333ms (View: 6321, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 10:21:53) [GET]
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 10:21:57) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 10:21:57) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 24ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 10:22:02) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 93ms (View: 78, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20111217021447)
+Migrating to CreateCardClasses (20111217021557)
+Migrating to CreateCards (20111217021654)
+Migrating to CreateAdvs (20111217021740)
+Migrating to CreateEleCoupons (20111217022010)
+Migrating to CreateUsesrs (20111217022650)
+  [4;36;1mSQL (114.0ms)[0m   [0;1mCREATE TABLE `usesrs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `user_name` varchar(255), `nickname` varchar(255), `gender` varchar(255), `birthday` date, `age` varchar(255), `occupation` varchar(255), `line_phone` varchar(255), `mobile_phone` varchar(255), `email` varchar(255), `user_address` varchar(255), `lock` varchar(255), `user_password` varchar(255), `id_number` varchar(255), `main_account` varchar(255), `imei` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217022650')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `advs`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `advs`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `advs`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `card_classes`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `card_classes`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `card_classes`[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mSHOW FIELDS FROM `cards`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mdescribe `cards`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `cards`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `ele_coupons`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `ele_coupons`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `ele_coupons`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mdescribe `stores`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `stores`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `usesrs`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `usesrs`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `usesrs`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20111217021447)
+Migrating to CreateCardClasses (20111217021557)
+Migrating to CreateCards (20111217021654)
+Migrating to CreateAdvs (20111217021740)
+Migrating to CreateEleCoupons (20111217022010)
+Migrating to CreateUsers (20111217022933)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `user_name` varchar(255), `nickname` varchar(255), `gender` varchar(255), `birthday` date, `age` varchar(255), `occupation` varchar(255), `line_phone` varchar(255), `mobile_phone` varchar(255), `email` varchar(255), `user_address` varchar(255), `lock` varchar(255), `user_password` varchar(255), `id_number` varchar(255), `main_account` varchar(255), `imei` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20111217022933)
+Migrating to CreateEleCoupons (20111217022010)
+  [4;36;1mSQL (170.0ms)[0m   [0;1mDROP TABLE `ele_coupons`[0m
+  [4;35;1mSQL (144.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20111217022010'[0m
+Migrating to CreateAdvs (20111217021740)
+  [4;36;1mSQL (73.0ms)[0m   [0;1mDROP TABLE `advs`[0m
+  [4;35;1mSQL (133.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20111217021740'[0m
+Migrating to CreateCards (20111217021654)
+  [4;36;1mSQL (169.0ms)[0m   [0;1mDROP TABLE `cards`[0m
+  [4;35;1mSQL (191.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20111217021654'[0m
+Migrating to CreateCardClasses (20111217021557)
+  [4;36;1mSQL (140.0ms)[0m   [0;1mDROP TABLE `card_classes`[0m
+  [4;35;1mSQL (180.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20111217021557'[0m
+Migrating to CreateStores (20111217021447)
+  [4;36;1mSQL (326.0ms)[0m   [0;1mDROP TABLE `stores`[0m
+  [4;35;1mSQL (115.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20111217021447'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (53.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `usesrs`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `usesrs`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `usesrs`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (103.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (267.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20111217021447)
+  [4;36;1mSQL (91.0ms)[0m   [0;1mCREATE TABLE `stores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `store_id` varchar(255), `store_name` varchar(255), `store_address` varchar(255), `contact` varchar(255), `license_id` varchar(255), `logo` varchar(255), `store_password` varchar(255), `parent_store_id` varchar(255), `hot` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021447')[0m
+Migrating to CreateCardClasses (20111217021557)
+  [4;36;1mSQL (127.0ms)[0m   [0;1mCREATE TABLE `card_classes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `store_id` varchar(255), `class` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021557')[0m
+Migrating to CreateCards (20111217021654)
+  [4;36;1mSQL (53.0ms)[0m   [0;1mCREATE TABLE `cards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `store_id` varchar(255), `class` varchar(255), `card_number` varchar(255), `card_password` varchar(255), `authorized` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021654')[0m
+Migrating to CreateAdvs (20111217021740)
+  [4;36;1mSQL (113.0ms)[0m   [0;1mCREATE TABLE `advs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `adv_id` varchar(255), `store_id` varchar(255), `title` varchar(255), `text` varchar(255), `pic` varchar(255), `start_time` varchar(255), `end_time` varchar(255), `push` varchar(255), `remain` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (127.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217021740')[0m
+Migrating to CreateEleCoupons (20111217022010)
+  [4;36;1mSQL (117.0ms)[0m   [0;1mCREATE TABLE `ele_coupons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `adv_id` varchar(255), `barcode` varchar(255), `paid` varchar(255), `eff_start_time` date, `eff_end_time` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (77.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217022010')[0m
+Migrating to CreateUsers (20111217022933)
+  [4;36;1mSQL (105.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255), `user_name` varchar(255), `nickname` varchar(255), `gender` varchar(255), `birthday` date, `age` varchar(255), `occupation` varchar(255), `line_phone` varchar(255), `mobile_phone` varchar(255), `email` varchar(255), `user_address` varchar(255), `lock` varchar(255), `user_password` varchar(255), `id_number` varchar(255), `main_account` varchar(255), `imei` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (14.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217022933')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `advs`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `advs`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `advs`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW FIELDS FROM `card_classes`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `card_classes`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `card_classes`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `cards`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `cards`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW KEYS FROM `cards`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `ele_coupons`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mdescribe `ele_coupons`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `ele_coupons`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mdescribe `stores`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `stores`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (106.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20111217021447)
+Migrating to CreateCardClasses (20111217021557)
+Migrating to CreateCards (20111217021654)
+Migrating to CreateAdvs (20111217021740)
+Migrating to CreateEleCoupons (20111217022010)
+Migrating to CreateUsers (20111217022933)
+Migrating to AddSaltToUser (20111217030216)
+  [4;36;1mSQL (399.0ms)[0m   [0;1mALTER TABLE `users` ADD `salt` varchar(255)[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20111217030216')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (64.0ms)[0m   [0mSHOW FIELDS FROM `advs`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `advs`[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mSHOW KEYS FROM `advs`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mSHOW FIELDS FROM `card_classes`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mdescribe `card_classes`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `card_classes`[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mSHOW FIELDS FROM `cards`[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mdescribe `cards`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `cards`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `ele_coupons`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `ele_coupons`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `ele_coupons`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `stores`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `stores`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 11:20:13) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 422ms (DB: 35) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:14) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 36ms (DB: 6) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:15) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 44ms (DB: 7) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:15) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 43ms (DB: 8) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:15) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 41ms (DB: 7) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:15) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 63ms (DB: 7) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:16) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 43ms (DB: 9) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:16) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 42ms (DB: 9) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:16) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (8.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 68ms (DB: 15) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:17) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 108ms (DB: 7) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:17) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (9.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 46ms (DB: 15) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:17) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (5.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 48ms (DB: 12) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:17) [GET]
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 37ms (DB: 7) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:18) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 57ms (DB: 6) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:18) [GET]
+  [4;36;1mUser Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 45ms (DB: 10) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:19) [GET]
+  [4;36;1mUser Columns (26.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 63ms (DB: 28) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:19) [GET]
+  [4;36;1mUser Columns (14.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 53ms (DB: 16) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:19) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 42ms (DB: 6) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:20) [GET]
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 40ms (DB: 9) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:20) [GET]
+  [4;36;1mUser Columns (17.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 52ms (DB: 19) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:20) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/session/post
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 41ms (DB: 8) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 11:20:38) [GET]
+Rendering session/post
+Completed in 68ms (View: 66, DB: 1) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 11:21:08) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 78ms (View: 38, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:21:11) [GET]
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 91ms (View: 55, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:21:34) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"2", "id_number"=>"", "lock"=>"", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"2", "user_password"=>"", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `name' for #<User:0x4f88fd0>):
+  app/controllers/users_controller.rb:46:in `create'
+  app/controllers/users_controller.rb:45:in `create'
+
+Rendered rescues/_trace (113.0ms)
+Rendered rescues/_request_and_response (32.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:21:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"2", "id_number"=>"", "lock"=>"", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"2", "user_password"=>"", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `name' for #<User:0x5176758>):
+  app/controllers/users_controller.rb:46:in `create'
+  app/controllers/users_controller.rb:45:in `create'
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 11:24:59) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 62ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:25:00) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 94ms (View: 56, DB: 5) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:25:36) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+
+ActionView::TemplateError (undefined method `userid' for #<User:0x4e2ab58>) on line #8 of app/views/users/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :user_id %><br />
+8:     <%= f.text_field :userid %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :user_name %><br />
+
+    app/views/users/new.html.erb:8
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:29:in `new'
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:25:38) [GET]
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+
+ActionView::TemplateError (undefined method `userid' for #<User:0x4ff5c30>) on line #8 of app/views/users/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :user_id %><br />
+8:     <%= f.text_field :userid %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :user_name %><br />
+
+    app/views/users/new.html.erb:8
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:29:in `new'
+
+Rendered rescues/_trace (141.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:25:48) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 155ms (View: 94, DB: 8) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:25:55) [GET]
+  [4;35;1mUser Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 144ms (View: 66, DB: 11) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:26:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"9", "lock"=>"6", "user_address"=>"5", "gender"=>"boy", "user_id"=>"12345678", "user_name"=>"jjdoo", "user_password"=>"78", "age"=>"12", "imei"=>"0", "email"=>"4", "mobile_phone"=>"3"}}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (21.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 107ms (View: 31, DB: 28) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:27:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"9", "lock"=>"6", "user_address"=>"5", "gender"=>"boy", "user_id"=>"12345678", "user_name"=>"jjdoo", "user_password"=>"1234567890", "age"=>"12", "imei"=>"0", "email"=>"4", "mobile_phone"=>"3"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 70ms (View: 24, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:27:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"9", "lock"=>"6", "user_address"=>"5", "gender"=>"boy", "user_id"=>"12345678", "user_name"=>"jjdoo", "user_password"=>"1234567890", "age"=>"12", "imei"=>"0", "email"=>"4", "mobile_phone"=>"3"}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 129ms (View: 22, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 11:28:45) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 55ms (View: 5, DB: 1) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:28:47) [GET]
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 69ms (View: 25, DB: 5) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:29:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"000", "lock"=>"8", "user_address"=>"7", "gender"=>"boy", "user_id"=>"1234253", "user_name"=>"jjdoo", "user_password"=>"999", "age"=>"12", "imei"=>"000", "email"=>"6", "mobile_phone"=>"5"}}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 78ms (View: 27, DB: 6) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:29:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"000", "lock"=>"8", "user_address"=>"7", "gender"=>"boy", "user_id"=>"1234253", "user_name"=>"jjdoo", "user_password"=>"999", "age"=>"12", "imei"=>"000", "email"=>"6", "mobile_phone"=>"5"}}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 89ms (View: 29, DB: 7) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:30:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"0", "occupation"=>"1", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"2", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"000", "lock"=>"8", "user_address"=>"7", "gender"=>"boy", "user_id"=>"1234253", "user_name"=>"jjdoo", "user_password"=>"999", "age"=>"12", "imei"=>"000", "email"=>"6", "mobile_phone"=>"5"}}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (40.0ms)[0m   [0;1mINSERT INTO `users` (`occupation`, `main_account`, `salt`, `created_at`, `nickname`, `line_phone`, `updated_at`, `user_address`, `lock`, `id_number`, `gender`, `user_id`, `user_name`, `birthday`, `user_password`, `age`, `mobile_phone`, `email`, `imei`) VALUES('1', '0', NULL, '2011-12-17 03:30:31', 'jjdoo', '2', '2011-12-17 03:30:31', '7', '8', '000', 'boy', '1234253', 'jjdoo', '2011-12-17', '999', '12', '5', '6', '000')[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed in 378ms (DB: 90) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 11:30:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (66.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 161ms (View: 53, DB: 71) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 11:30:46) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 68ms (View: 22, DB: 7) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 11:30:48) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 125ms (View: 85, DB: 5) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 11:30:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"gq92WWcqgg5XsGkLBFKdVuU7hgNt6IE0kWeb/r9Q1A8=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"", "id_number"=>"", "lock"=>"", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"jjdoo", "user_password"=>"2121312312", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY '') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 78ms (View: 28, DB: 7) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (52.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 14:52:52) [GET]
+  [4;36;1mUser Load (180.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (57.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 14623ms (View: 14339, DB: 290) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 14:53:07) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 95ms (View: 15, DB: 24) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 14:53:13) [GET]
+  [4;36;1mUser Columns (26.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 211ms (View: 140, DB: 26) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 14:53:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"82", "occupation"=>"5265", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"26256", "birthday(3i)"=>"17", "nickname"=>"625656", "id_number"=>"285", "lock"=>"6255", "user_address"=>"26562562", "gender"=>"546245", "user_id"=>"232423", "user_name"=>"2534256", "password"=>"123456", "age"=>"56264", "imei"=>"2852", "email"=>"6256", "mobile_phone"=>"52624"}}
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+SystemStackError (stack level too deep):
+  app/models/user.rb:33:in `create_new_salt'
+  app/models/user.rb:25:in `password='
+  app/models/user.rb:26:in `password='
+  app/controllers/users_controller.rb:43:in `new'
+  app/controllers/users_controller.rb:43:in `create'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (40.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 14:58:56) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 60ms (View: 14, DB: 10) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 14:58:58) [GET]
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 112ms (View: 54, DB: 8) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 14:59:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"678678", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"678678", "birthday(3i)"=>"17", "nickname"=>"6786", "id_number"=>"", "lock"=>"chengsheng", "user_address"=>"5", "gender"=>"65786", "user_id"=>"274523786", "user_name"=>"68632", "password"=>"123456", "age"=>"78678", "imei"=>"", "email"=>"7687", "mobile_phone"=>"6786"}}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+NoMethodError (undefined method `hashed_password=' for #<User:0x11757258>):
+  app/models/user.rb:26:in `password='
+  app/controllers/users_controller.rb:43:in `new'
+  app/controllers/users_controller.rb:43:in `create'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (201.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:01:10) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"678678", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"678678", "birthday(3i)"=>"17", "nickname"=>"6786", "id_number"=>"", "lock"=>"chengsheng", "user_address"=>"5", "gender"=>"65786", "user_id"=>"274523786", "user_name"=>"68632", "password"=>"123456", "age"=>"78678", "imei"=>"", "email"=>"7687", "mobile_phone"=>"6786"}}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+NoMethodError (undefined method `hashed_password=' for #<User:0x11bcfda0>):
+  app/models/user.rb:26:in `password='
+  app/controllers/users_controller.rb:43:in `new'
+  app/controllers/users_controller.rb:43:in `create'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 15:02:24) [GET]
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 82ms (View: 36, DB: 7) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:02:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"456888", "id_number"=>"", "lock"=>"chengsheng", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"", "password"=>"123456", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+NoMethodError (undefined method `hashed_password=' for #<User:0x1198b618>):
+  app/models/user.rb:26:in `password='
+  app/controllers/users_controller.rb:43:in `new'
+  app/controllers/users_controller.rb:43:in `create'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (158.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:03:17) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"456888", "id_number"=>"", "lock"=>"chengsheng", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"", "password"=>"123456", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY '456888') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 173ms (View: 55, DB: 10) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:03:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"456888", "id_number"=>"", "lock"=>"chengsheng", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"", "password"=>"123456", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY '456888') LIMIT 1[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`occupation`, `main_account`, `salt`, `created_at`, `nickname`, `line_phone`, `updated_at`, `user_address`, `lock`, `hashed_password`, `id_number`, `gender`, `user_id`, `user_name`, `birthday`, `age`, `mobile_phone`, `email`, `imei`) VALUES('', '', '1482851160.417262648215107', '2011-12-17 07:03:29', '456888', '', '2011-12-17 07:03:29', '', 'chengsheng', 'd4050c47425cca0c2d648d0a9d7e8005a94e8716', '', '', '', '', '2011-12-17', '', '', '', '')[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed in 3941ms (DB: 22) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:03:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (9.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 91ms (View: 32, DB: 17) | 200 OK [http://localhost/users/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 15:03:58) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 52ms (View: 4, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 15:04:00) [GET]
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 108ms (View: 48, DB: 9) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:04:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"", "occupation"=>"", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"", "birthday(3i)"=>"17", "nickname"=>"jjdoo", "id_number"=>"", "lock"=>"", "user_address"=>"", "gender"=>"", "user_id"=>"", "user_name"=>"", "password"=>"123456", "age"=>"", "imei"=>"", "email"=>"", "mobile_phone"=>""}}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'jjdoo') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`occupation`, `main_account`, `salt`, `created_at`, `nickname`, `line_phone`, `updated_at`, `user_address`, `lock`, `hashed_password`, `id_number`, `gender`, `user_id`, `user_name`, `birthday`, `age`, `mobile_phone`, `email`, `imei`) VALUES('', '', '1471416000.718310188139026', '2011-12-17 07:04:24', 'jjdoo', '', '2011-12-17 07:04:24', '', '', '518baed0a9629493265c2a3bed9d51a2f2218711', '', '', '', '', '2011-12-17', '', '', '', '')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed in 5590ms (DB: 33) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:04:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 74ms (View: 13, DB: 8) | 200 OK [http://localhost/users/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:09:02) [GET]
+  Parameters: {"id"=>"3。"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 151ms (View: 10, DB: 10) | 200 OK [http://localhost/users/3%E3%80%82]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:09:03) [GET]
+  Parameters: {"id"=>"3。json"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 74ms (View: 12, DB: 8) | 200 OK [http://localhost/users/3%E3%80%82json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:09:04) [GET]
+  Parameters: {"id"=>"3json"}
+  [4;35;1mUser Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 68ms (View: 11, DB: 14) | 200 OK [http://localhost/users/3json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:09:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 56ms (View: 3, DB: 7) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to jso (for 127.0.0.1 at 2011-12-17 15:09:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 70ms (View: 5, DB: 10) | 406 Not Acceptable [http://localhost/users/3.jso]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to j (for 127.0.0.1 at 2011-12-17 15:09:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 51ms (View: 2, DB: 10) | 406 Not Acceptable [http://localhost/users/3.j]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:09:12) [GET]
+
+ActionController::RoutingError (No route matches "/users/3." with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:09:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 58ms (View: 13, DB: 7) | 200 OK [http://localhost/users/3.xml]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to j (for 127.0.0.1 at 2011-12-17 15:09:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 65ms (View: 4, DB: 9) | 406 Not Acceptable [http://localhost/users/3.j]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:09:18) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 55ms (View: 2, DB: 10) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:09:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 55ms (View: 3, DB: 6) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:16:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (39.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 328ms (View: 41, DB: 40) | 200 OK [http://localhost/users/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 65ms (View: 3, DB: 20) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 63ms (View: 3, DB: 16) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to x (for 127.0.0.1 at 2011-12-17 15:16:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 56ms (View: 5, DB: 8) | 406 Not Acceptable [http://localhost/users/3.x]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:16:37) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 68ms (View: 15, DB: 10) | 200 OK [http://localhost/users/3.xml]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 53ms (View: 3, DB: 6) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 49ms (View: 3, DB: 5) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 55ms (View: 4, DB: 9) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:16:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 76ms (View: 3, DB: 14) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:17:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 51ms (View: 2, DB: 7) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:17:06) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 51ms (View: 2, DB: 7) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:18:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 66ms (View: 3, DB: 11) | 406 Not Acceptable [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:18:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 76ms (View: 14, DB: 8) | 200 OK [http://localhost/users/3.xml]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:24:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (43.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (9.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 148ms (View: 34, DB: 52) | 200 OK [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:25:03) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (13.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 79ms (View: 10, DB: 19) | 200 OK [http://localhost/users/3.json]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:25:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (4.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 73ms (View: 23, DB: 9) | 200 OK [http://localhost/users/3.xml]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:25:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Completed in 77ms (View: 12, DB: 7) | 200 OK [http://localhost/users/3.xml]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-12-17 15:26:21) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 104ms (View: 47, DB: 11) | 200 OK [http://localhost/users/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-12-17 15:26:23) [GET]
+  [4;35;1mUser Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 256ms (View: 202, DB: 11) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-12-17 15:27:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "user"=>{"main_account"=>"Main account", "occupation"=>"Occupation", "birthday(1i)"=>"2011", "birthday(2i)"=>"12", "password_confirmation"=>"123456", "line_phone"=>"Line phone", "birthday(3i)"=>"17", "nickname"=>"Nickname", "id_number"=>"Id number", "lock"=>"Lock", "user_address"=>"User address", "gender"=>"Gender", "user_id"=>"Userid", "user_name"=>"Username", "password"=>"123456", "age"=>"age", "imei"=>"Imei", "email"=>"Email", "mobile_phone"=>"Line phone"}}
+  [4;36;1mUser Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`nickname` = BINARY 'Nickname') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`mobile_phone` = BINARY 'Line phone') LIMIT 1[0m
+  [4;36;1mUser Create (14.0ms)[0m   [0;1mINSERT INTO `users` (`occupation`, `main_account`, `salt`, `created_at`, `nickname`, `line_phone`, `updated_at`, `user_address`, `lock`, `hashed_password`, `id_number`, `gender`, `user_id`, `user_name`, `birthday`, `age`, `mobile_phone`, `email`, `imei`) VALUES('Occupation', 'Main account', '1484567040.405589773611915', '2011-12-17 07:27:37', 'Nickname', 'Line phone', '2011-12-17 07:27:37', 'User address', 'Lock', '3451f0a0bcec106911d4e249b8efbea294ea650e', 'Id number', 'Gender', 'Userid', 'Username', '2011-12-17', 'age', 'Line phone', 'Email', 'Imei')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed in 263ms (DB: 60) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:27:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 64ms (View: 9, DB: 11) | 200 OK [http://localhost/users/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-12-17 15:27:44) [GET]
+  Parameters: {"id"=>"4。"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 54ms (View: 9, DB: 5) | 200 OK [http://localhost/users/4%E3%80%82]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:27:47) [GET]
+
+ActionController::RoutingError (No route matches "/users/4." with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to json (for 127.0.0.1 at 2011-12-17 15:27:48) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Completed in 58ms (View: 12, DB: 9) | 200 OK [http://localhost/users/4.json]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to x (for 127.0.0.1 at 2011-12-17 15:27:52) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Completed in 60ms (View: 3, DB: 6) | 406 Not Acceptable [http://localhost/users/4.x]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing UsersController#show to xml (for 127.0.0.1 at 2011-12-17 15:27:53) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+Completed in 84ms (View: 13, DB: 30) | 200 OK [http://localhost/users/4.xml]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:28:43) [GET]
+
+ActionController::RoutingError (No route matches "/s" with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:28:44) [GET]
+
+ActionController::RoutingError (No route matches "/se" with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:28:44) [GET]
+
+ActionController::RoutingError (No route matches "/sess" with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:28:45) [GET]
+
+ActionController::RoutingError (No route matches "/sessi" with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:28:45) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-12-17 15:28:45) [GET]
+
+ActionController::RoutingError (No route matches "/sessions" with {:method=>:get}):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:28:49) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:28:55) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#p (for 127.0.0.1 at 2011-12-17 15:28:58) [GET]
+
+ActionController::UnknownAction (No action responded to p. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#pos (for 127.0.0.1 at 2011-12-17 15:28:58) [GET]
+
+ActionController::UnknownAction (No action responded to pos. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:28:59) [GET]
+Rendering session/post
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:29:58) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "password"=>"123456"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW TABLES[0m
+
+NoMethodError (undefined method `find_by_name' for #<Class:0x11922450>):
+  app/models/user.rb:9:in `authenticate'
+  app/controllers/session_controller.rb:4:in `post'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (197.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:32:34) [GET]
+Rendering session/post
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:32:43) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "password"=>"123456"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Redirected to http://localhost:3000/session
+Completed in 199ms (DB: 5) | 302 Found [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:32:44) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:34:48) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#index (for 127.0.0.1 at 2011-12-17 15:34:58) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: delete, get, and post):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:34:59) [GET]
+Rendering session/post
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:35:01) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "password"=>"123456"}
+  [4;36;1mUser Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 70ms (View: 5, DB: 13) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:36:11) [GET]
+Rendering session/post
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:36:15) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"64g9ok483JeU+e9dlRNzW7wpKrpm5oJKWlJXIImNLiI=", "password"=>"123454446"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/session_controller.rb:10:in `post'
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (192.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing ApplicationController#post (for 127.0.0.1 at 2011-12-17 15:36:38) [GET]
+
+SyntaxError (D:/NetBeansProjects/cloudcard/app/controllers/session_controller.rb:10: syntax error, unexpected tINTEGER, expecting kDO or '{' or '('
+       render :json => { head 401, :error=>"用户名或密码错误"}
+                                 ^
+D:/NetBeansProjects/cloudcard/app/controllers/session_controller.rb:10: syntax error, unexpected '}', expecting kEND
+D:/NetBeansProjects/cloudcard/app/controllers/session_controller.rb:21: syntax error, unexpected $end, expecting kEND):
+  /script\server:3
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_load'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/lib/ruby-debug.rb:101:in `debug_program'
+  d:/Ruby187/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.5/bin/rdebug-ide:82
+  D:/Ruby187/bin/rdebug-ide:19:in `load'
+  D:/Ruby187/bin/rdebug-ide:19
+
+Rendered rescues/_trace (106.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:37:36) [GET]
+Rendering session/post
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:37:53) [GET]
+Rendering session/post
+Completed in 83ms (View: 79, DB: 2) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:38:09) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"svEg3VPNjhI5BbdL/tm4DfCyTaLgGdnrHWifyEd3z64=", "password"=>"123456"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 92ms (View: 6, DB: 9) | 200 OK [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:47:14) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"svEg3VPNjhI5BbdL/tm4DfCyTaLgGdnrHWifyEd3z64=", "password"=>"123456"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 355ms (View: 5, DB: 6) | 201 Created [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:47:25) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"svEg3VPNjhI5BbdL/tm4DfCyTaLgGdnrHWifyEd3z64=", "password"=>"1234444"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 84ms (View: 3, DB: 5) | 401 Unauthorized [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:47:34) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"svEg3VPNjhI5BbdL/tm4DfCyTaLgGdnrHWifyEd3z64=", "password"=>"1234444"}
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 92ms (View: 3, DB: 7) | 401 Unauthorized [http://localhost/session/post]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#get (for 127.0.0.1 at 2011-12-17 15:50:09) [GET]
+  [4;36;1mUser Columns (8.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (8.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_id` = 3) LIMIT 1[0m
+Completed in 76ms (View: 3, DB: 16) | 200 OK [http://localhost/session/get]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: protect_from_forgery only takes :only and :except options now. :digest and :secret have no effect. (called from D:/NetBeansProjects/cloudcard/app/controllers/application_controller.rb:9)
+
+
+Processing SessionController#post (for 127.0.0.1 at 2011-12-17 15:50:38) [POST]
+  Parameters: {"name"=>"jjdoo", "commit"=>"Login", "authenticity_token"=>"svEg3VPNjhI5BbdL/tm4DfCyTaLgGdnrHWifyEd3z64=", "password"=>"1234444"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`nickname` = 'jjdoo') LIMIT 1[0m
+Completed in 70ms (View: 3, DB: 7) | 401 Unauthorized [http://localhost/session/post]

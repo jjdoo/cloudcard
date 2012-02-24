@@ -1,0 +1,2 @@
+module StoreMemberHelper
+end

@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: MyString
+  user_name: MyString
+  nickname: MyString
+  gender: MyString
+  birthday: 2011-12-17
+  age: MyString
+  occupation: MyString
+  line_phone: MyString
+  mobile_phone: MyString
+  email: MyString
+  user_address: MyString
+  lock: MyString
+  user_password: MyString
+  id_number: MyString
+  main_account: MyString
+  imei: MyString
+
+two:
+  user_id: MyString
+  user_name: MyString
+  nickname: MyString
+  gender: MyString
+  birthday: 2011-12-17
+  age: MyString
+  occupation: MyString
+  line_phone: MyString
+  mobile_phone: MyString
+  email: MyString
+  user_address: MyString
+  lock: MyString
+  user_password: MyString
+  id_number: MyString
+  main_account: MyString
+  imei: MyString

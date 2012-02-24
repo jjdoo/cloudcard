@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: MyString
+  store_id: MyString
+  class: MyString
+  card_number: MyString
+  card_password: MyString
+  authorized: MyString
+
+two:
+  user_id: MyString
+  store_id: MyString
+  class: MyString
+  card_number: MyString
+  card_password: MyString
+  authorized: MyString

@@ -1,0 +1,36 @@
+<h1>Listing advs</h1>
+
+<table>
+  <tr>
+    <th>Adv</th>
+    <th>Store</th>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Pic</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Push</th>
+    <th>Remain</th>
+  </tr>
+
+<% @advs.each do |adv| %>
+  <tr>
+    <td><%=h adv.adv_id %></td>
+    <td><%=h adv.store_id %></td>
+    <td><%=h adv.title %></td>
+    <td><%=h adv.text %></td>
+    <td><%=h adv.pic %></td>
+    <td><%=h adv.start_time %></td>
+    <td><%=h adv.end_time %></td>
+    <td><%=h adv.push %></td>
+    <td><%=h adv.remain %></td>
+    <td><%= link_to 'Show', adv %></td>
+    <td><%= link_to 'Edit', edit_adv_path(adv) %></td>
+    <td><%= link_to 'Destroy', adv, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New adv', new_adv_path %>

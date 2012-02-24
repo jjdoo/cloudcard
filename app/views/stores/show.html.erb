@@ -1,0 +1,48 @@
+<p>
+  <b>Store:</b>
+  <%=h @store.store_id %>
+</p>
+
+<p>
+  <b>Store name:</b>
+  <%=h @store.store_name %>
+</p>
+
+<p>
+  <b>Store address:</b>
+  <%=h @store.store_address %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @store.contact %>
+</p>
+
+<p>
+  <b>License:</b>
+  <%=h @store.license_id %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%=h @store.logo %>
+</p>
+
+<p>
+  <b>Store password:</b>
+  <%=h @store.store_password %>
+</p>
+
+<p>
+  <b>Parent store:</b>
+  <%=h @store.parent_store_id %>
+</p>
+
+<p>
+  <b>Hot:</b>
+  <%=h @store.hot %>
+</p>
+
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>

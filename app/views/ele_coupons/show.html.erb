@@ -1,0 +1,28 @@
+<p>
+  <b>Adv:</b>
+  <%=h @ele_coupon.adv_id %>
+</p>
+
+<p>
+  <b>Barcode:</b>
+  <%=h @ele_coupon.barcode %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%=h @ele_coupon.paid %>
+</p>
+
+<p>
+  <b>Eff start time:</b>
+  <%=h @ele_coupon.eff_start_time %>
+</p>
+
+<p>
+  <b>Eff end time:</b>
+  <%=h @ele_coupon.eff_end_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_ele_coupon_path(@ele_coupon) %> |
+<%= link_to 'Back', ele_coupons_path %>

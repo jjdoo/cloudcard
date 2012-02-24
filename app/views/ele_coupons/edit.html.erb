@@ -1,0 +1,32 @@
+<h1>Editing ele_coupon</h1>
+
+<% form_for(@ele_coupon) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :adv_id %><br />
+    <%= f.text_field :adv_id %>
+  </p>
+  <p>
+    <%= f.label :barcode %><br />
+    <%= f.text_field :barcode %>
+  </p>
+  <p>
+    <%= f.label :paid %><br />
+    <%= f.text_field :paid %>
+  </p>
+  <p>
+    <%= f.label :eff_start_time %><br />
+    <%= f.date_select :eff_start_time %>
+  </p>
+  <p>
+    <%= f.label :eff_end_time %><br />
+    <%= f.date_select :eff_end_time %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ele_coupon %> |
+<%= link_to 'Back', ele_coupons_path %>

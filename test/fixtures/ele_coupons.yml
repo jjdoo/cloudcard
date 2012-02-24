@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  adv_id: MyString
+  barcode: MyString
+  paid: MyString
+  eff_start_time: 2011-12-17
+  eff_end_time: 2011-12-17
+
+two:
+  adv_id: MyString
+  barcode: MyString
+  paid: MyString
+  eff_start_time: 2011-12-17
+  eff_end_time: 2011-12-17

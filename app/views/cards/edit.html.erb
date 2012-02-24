@@ -1,0 +1,36 @@
+<h1>Editing card</h1>
+
+<% form_for(@card) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :store_id %><br />
+    <%= f.text_field :store_id %>
+  </p>
+  <p>
+    <%= f.label :class %><br />
+    <%= f.text_field :class %>
+  </p>
+  <p>
+    <%= f.label :card_number %><br />
+    <%= f.text_field :card_number %>
+  </p>
+  <p>
+    <%= f.label :card_password %><br />
+    <%= f.text_field :card_password %>
+  </p>
+  <p>
+    <%= f.label :authorized %><br />
+    <%= f.text_field :authorized %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @card %> |
+<%= link_to 'Back', cards_path %>

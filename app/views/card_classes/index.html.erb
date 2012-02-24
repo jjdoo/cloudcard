@@ -1,0 +1,22 @@
+<h1>Listing card_classes</h1>
+
+<table>
+  <tr>
+    <th>Store</th>
+    <th>Class</th>
+  </tr>
+
+<% @card_classes.each do |card_class| %>
+  <tr>
+    <td><%=h card_class.store_id %></td>
+    <td><%=h card_class.class %></td>
+    <td><%= link_to 'Show', card_class %></td>
+    <td><%= link_to 'Edit', edit_card_class_path(card_class) %></td>
+    <td><%= link_to 'Destroy', card_class, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card_class', new_card_class_path %>

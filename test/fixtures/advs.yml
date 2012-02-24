@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  adv_id: MyString
+  store_id: MyString
+  title: MyString
+  text: MyString
+  pic: MyString
+  start_time: MyString
+  end_time: MyString
+  push: MyString
+  remain: MyString
+
+two:
+  adv_id: MyString
+  store_id: MyString
+  title: MyString
+  text: MyString
+  pic: MyString
+  start_time: MyString
+  end_time: MyString
+  push: MyString
+  remain: MyString

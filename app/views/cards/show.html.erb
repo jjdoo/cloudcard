@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @card.user_id %>
+</p>
+
+<p>
+  <b>Store:</b>
+  <%=h @card.store_id %>
+</p>
+
+<p>
+  <b>Class:</b>
+  <%=h @card.class %>
+</p>
+
+<p>
+  <b>Card number:</b>
+  <%=h @card.card_number %>
+</p>
+
+<p>
+  <b>Card password:</b>
+  <%=h @card.card_password %>
+</p>
+
+<p>
+  <b>Authorized:</b>
+  <%=h @card.authorized %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

@@ -1,0 +1,47 @@
+<h1>New store</h1>
+
+<% form_for(@store) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :store_id %><br />
+    <%= f.text_field :store_id %>
+  </p>
+  <p>
+    <%= f.label :store_name %><br />
+    <%= f.text_field :store_name %>
+  </p>
+  <p>
+    <%= f.label :store_address %><br />
+    <%= f.text_field :store_address %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :license_id %><br />
+    <%= f.text_field :license_id %>
+  </p>
+  <p>
+    <%= f.label :logo %><br />
+    <%= f.text_field :logo %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :parent_store_id %><br />
+    <%= f.text_field :parent_store_id %>
+  </p>
+  <p>
+    <%= f.label :hot %><br />
+    <%= f.text_field :hot %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', stores_path %>

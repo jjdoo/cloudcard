@@ -1,0 +1,13 @@
+<p>
+  <b>Store:</b>
+  <%=h @card_class.store_id %>
+</p>
+
+<p>
+  <b>Class:</b>
+  <%=h @card_class.class %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_class_path(@card_class) %> |
+<%= link_to 'Back', card_classes_path %>

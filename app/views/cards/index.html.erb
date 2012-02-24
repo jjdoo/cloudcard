@@ -1,0 +1,30 @@
+<h1>Listing cards</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Store</th>
+    <th>Class</th>
+    <th>Card number</th>
+    <th>Card password</th>
+    <th>Authorized</th>
+  </tr>
+
+<% @cards.each do |card| %>
+  <tr>
+    <td><%=h card.user_id %></td>
+    <td><%=h card.store_id %></td>
+    <td><%=h card.class %></td>
+    <td><%=h card.card_number %></td>
+    <td><%=h card.card_password %></td>
+    <td><%=h card.authorized %></td>
+    <td><%= link_to 'Show', card %></td>
+    <td><%= link_to 'Edit', edit_card_path(card) %></td>
+    <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card', new_card_path %>

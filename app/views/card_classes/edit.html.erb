@@ -1,0 +1,20 @@
+<h1>Editing card_class</h1>
+
+<% form_for(@card_class) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :store_id %><br />
+    <%= f.text_field :store_id %>
+  </p>
+  <p>
+    <%= f.label :class %><br />
+    <%= f.text_field :class %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @card_class %> |
+<%= link_to 'Back', card_classes_path %>

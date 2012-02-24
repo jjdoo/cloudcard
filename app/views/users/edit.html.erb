@@ -1,0 +1,76 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </p>
+  <p>
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </p>
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :occupation %><br />
+    <%= f.text_field :occupation %>
+  </p>
+  <p>
+    <%= f.label :line_phone %><br />
+    <%= f.text_field :line_phone %>
+  </p>
+  <p>
+    <%= f.label :mobile_phone %><br />
+    <%= f.text_field :mobile_phone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :user_address %><br />
+    <%= f.text_field :user_address %>
+  </p>
+  <p>
+    <%= f.label :lock %><br />
+    <%= f.text_field :lock %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :id_number %><br />
+    <%= f.text_field :id_number %>
+  </p>
+  <p>
+    <%= f.label :main_account %><br />
+    <%= f.text_field :main_account %>
+  </p>
+  <p>
+    <%= f.label :imei %><br />
+    <%= f.text_field :imei %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
